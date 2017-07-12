@@ -35,10 +35,6 @@ class EmailList extends Component {
         activeClassName={"active"}
       />
       {this.props.list.slice(this.state.offset, this.state.offset + this.props.perPage).map((email) => <p>{email}</p>) }
-      <ReactPaginate
-        pageCount={this.props.list.length / this.props.perPage}
-        onPageChange={this.handlePageChange}
-      />
     </div>
   }
 }
@@ -111,7 +107,7 @@ class App extends Component {
             <button onClick={() => this.handleGenerateInput()}>
               Generate an input (Warning: Takes a long time)
             </button>
-            <EmailList list={this.state.input} perPage={100} />
+            <EmailList list={this.state.input} perPage={10} />
           </div>
           <div style={{width: "50%", float: 'left', backgroundColor: '#999999'}}>
             <h2>Output</h2>
@@ -121,7 +117,7 @@ class App extends Component {
             >
               Dedupe the input
             </button>
-            <EmailList list={this.state.output} perPage={100} />
+            <EmailList list={this.state.output} perPage={10} />
           </div>
         </div>
       </div>
