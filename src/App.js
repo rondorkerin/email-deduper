@@ -75,8 +75,10 @@ class App extends Component {
     }
     for (let i = 0; i < 50000; i++) {
       // splice a random existing email from the input into another location in the input.
-      let randomEmail = input[getRandomArbitrary(0, input.length)];
+      let oldRandomIndex = getRandomArbitrary(0, input.length)
+      let randomEmail = input[oldRandomIndex];
       let randomIndex = getRandomArbitrary(0, input.length);
+      // console.log('inserting', randomEmail, 'at position', randomIndex, 'from position', oldRandomIndex)
       input.splice(randomIndex, 0, randomEmail);
     }
     return input;
