@@ -248,6 +248,29 @@ but I will leave the following comments:
 ### Deploy the thing
 I love heroku. I really do. I used it back in the olden days of rails in 2011 and thought it was garbage, but it's really improved quite a bit.
 
+i `git init` and push it to a public repo i create.
+
+https://github.com/sbryant31/email-deduper
+
+I re-run `yarn test` just to make sure everything is good before deploying.
+
+I use the heroku CLI to deploy.
+
+`heroku git:remote -a email-deduper`
+`git push heroku master`
+
+We'll see how good it is at deploying my SPA. If it doesnt work we'll have to use a custom buildpack.
+
+`heroku logs`
+
+< errors >
+
+Just like i thought i need to use a custom buildpack.
+
+heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git
+
+
+
 ### Conclusion
 
 I'm really excited to be interviewing for the bot related position. I'll be googling and collecting my thoughts about chatbots until our next interview!
