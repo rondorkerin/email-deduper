@@ -34,7 +34,7 @@ class EmailList extends Component {
         subContainerClassName={"pages pagination"}
         activeClassName={"active"}
       />
-      {this.props.list.slice(this.state.offset, this.state.offset + this.props.perPage).map((email) => <p>{email}</p>) }
+      {this.props.list.slice(this.state.offset, this.props.perPage).map((email) => <p>{email}</p>) }
     </div>
   }
 }
