@@ -267,12 +267,17 @@ We'll see how good it is at deploying my SPA. If it doesnt work we'll have to us
 
 Just like i thought i need to use a custom buildpack.
 
-heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git
+`heroku buildpacks:set https://github.com/mars/create-react-app-buildpack.git`
+`git push heroku master`
 
 
+https://email-deduper.herokuapp.com/
+
+Everything checks out.
 
 ### Conclusion
 
 I'm really excited to be interviewing for the bot related position. I'll be googling and collecting my thoughts about chatbots until our next interview!
 
+There were some improvements that could be made to my code, and I would be happy to discuss them. This project could have easily been improved for another 10 hours. I spent about 3 hours on it.
 

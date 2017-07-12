@@ -7,21 +7,18 @@ function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-// generates 100,000 email addresses containing 50% randomly placed duplicates
-function generateInput() {
-  new App().generateInput();
-}
-
 let testInput;
 
 beforeAll(() => {
-  testInput = generateInput();
+  testInput = new App().generateInput();
 });
 
+/*
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
 });
+*/
 
 it('can dedupe an empty array', () => {
   const output = new App().dedupe([]);
@@ -32,7 +29,6 @@ it('creates a test input of the appropriate length', () => {
   expect(testInput.length).toEqual(100000);
 });
 
-/*
 it('leaves the resulting list in the original order', () => {
   const output = new App().dedupe(testInput);
   let previousEarliestIndex = 0;
@@ -44,7 +40,6 @@ it('leaves the resulting list in the original order', () => {
     previousEarliestIndex = earliestIndex;
   }
 });
-*/
 
 it('runs well under one second', () => {
   const app = new App();
