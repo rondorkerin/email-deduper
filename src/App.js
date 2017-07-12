@@ -17,6 +17,7 @@ class EmailList extends Component {
     let selected = data.selected;
     let offset = Math.ceil(selected * this.props.perPage);
 
+    console.log('page change', selected,offset);
     this.setState({offset});
   }
 
@@ -25,6 +26,7 @@ class EmailList extends Component {
       return <div>Not generated</div>
     }
 
+    console.log('list slice', this.props.list, this.props.list.slice(this.state.offset, this.props.perPage));
     return <div>
       <ReactPaginate
         pageCount={this.props.list.length / this.props.perPage}
@@ -75,7 +77,10 @@ class App extends Component {
     }
     for (let i = 0; i < 50000; i++) {
       // splice a random existing email from the input into another location in the input.
-      input.splice(getRandomArbitrary(0, input.length), 0, input[getRandomArbitrary(0, input.length)]);
+      let randomEmail = input[getRandomArbitrary(0, input.length)];
+      let randomIndex = getRandomArbitrary(0, input.length);
+      console.log('splicing', randomIndex, randomEmail);
+      input.splice(randomIndex, 0, randomEmail);
     }
     return input;
   }
